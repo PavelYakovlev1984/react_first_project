@@ -1,18 +1,14 @@
 import React from 'react';
 import s from'./NavBar.module.css';
 
-// let s = {
-//   'nav' : 'NavBar_navBar__Fh58k',
-//   'item' : 'NavBar_item__1XDTU'
-// }
-
 const NavBar = () => {
     return (<nav className={s.navBar}>
     <div className={s.item}>
-    Profile
+        <a href="/profile">Profile</a>
     </div>
     <div className={`${s.item} ${s.active}`}>
-    Messages</div>
+        <a href="/dialogs">Messages</a>
+    </div>
     <div className={s.item}>
     News</div>
     <div className={s.item}>
