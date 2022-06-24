@@ -6,19 +6,19 @@ const NavBar = () => {
     return (
         <nav className={s.navBar}>
             <div className={s.item}>
-                <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/profile" className={(navData) => navData.isActive ? "activeLink" : "item" }>Profile</NavLink>
             </div>
-            <div className={`${s.item} ${s.active}`}>
-                <NavLink to="/dialogs">Messages</NavLink>
-            </div>
-            <div className={s.item}>
-                <NavLink to="/dialogs">News</NavLink>
+            <div className={`${s.item} ${s.activeLink}`}>
+                <NavLink className={(navData) => navData.isActive ? "activeLink" : "item" } to="/dialogs" >Messages</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to="/dialogs">Music</NavLink>
+                <NavLink to="/news" className={(navData) => navData.isActive ? "activeLink" : "item" }>News</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to="/dialogs">Settings</NavLink>
+                <NavLink to="/music" activeClassName={s.activeLink}>Music</NavLink>
+            </div>
+            <div className={s.item}>
+                <NavLink to="/settings" activeClassName={s.activeLink}>Settings</NavLink>
             </div>
         </nav>
     )
