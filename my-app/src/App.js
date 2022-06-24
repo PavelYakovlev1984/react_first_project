@@ -5,7 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Dialogs from "./components/Dialogs/Dialogs";
 import React from "react";
-import {Route} from "react-router";
+import {Route, Routes} from "react-router";
 import {BrowserRouter} from "react-router-dom";
 
 const App = () => {
@@ -16,8 +16,13 @@ const App = () => {
         < Header / >
         < NavBar / >
         < div class='app-wrapper-content'>
-        <Route path='/dialog' component={Dialogs}/>
-        <Route path='/profile' component={Profile}/>
+            <Routes>
+        <Route path='/dialogs' element={<Dialogs />}/>
+        <Route path='/profile' element={<Profile />}/>
+        <Route path='/news' element={<News />}/>
+        <Route path='/music' element={<Music />}/>
+        <Route path='/settings' element={<Settings />}/>
+                </Routes>
         < /div>
 </div>
 
