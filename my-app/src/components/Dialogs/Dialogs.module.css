@@ -7,6 +7,10 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
+.dialogs a {
+    color: white;
+    text-decoration: none;
+}
 
 .dialogsItems {
     padding: 10px;
