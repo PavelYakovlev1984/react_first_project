@@ -11,7 +11,8 @@ import React from "react";
 import {Route, Routes} from "react-router";
 import {BrowserRouter} from "react-router-dom";
 
-const App = () => {
+const App = (props   ) => {
+
     return (
         <BrowserRouter>
         < div
@@ -20,15 +21,14 @@ const App = () => {
         < NavBar / >
         < div class='app-wrapper-content'>
             <Routes>
-        <Route path='/dialogs' element={<Dialogs />}/>
-        <Route path='/profile' element={<Profile />}/>
-        <Route path='/news' element={<News />}/>
+        <Route path='/dialogs' element={<Dialogs dialogData={props.dialogData}    messageData={props.messageData}/>}/>
+        <Route path='/profile' element={<Profile  posts={props.posts}  />}/>
+     {/*   <Route path='/news' element={<News />}/>
         <Route path='/music' element={<Music />}/>
-        <Route path='/settings' element={<Settings />}/>
+        <Route path='/settings' element={<Settings />}/>*/}
                 </Routes>
         < /div>
 </div>
-
 
 
 </BrowserRouter>)
