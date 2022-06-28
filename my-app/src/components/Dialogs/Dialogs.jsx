@@ -19,11 +19,11 @@ const Dialogs = (props) => {
 
 
 
-    let dialogsElements = props.dialogData.map( d =>
+    let dialogsElements = props.state.dialogData.map( d =>
         <DialogItem name={d.name} id={d.id}/>
     );
 
-    let messageElements = props.messageData.map( m =>
+    let messageElements = props.atate.messageData.map( m =>
         <Message message={m.message}/>
     )
 
