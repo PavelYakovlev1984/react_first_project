@@ -1,10 +1,11 @@
 import React from "react";
 import s from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
+import ProfileInfo from "../Profile/ProfileInfo/ProfileInfo";
 
 const DialogItem = (props) => {
     let path = "/dialogs/" + props.id;
-    return    (<div className={s.dialog + ' ' + s.active}>
+    return    (<div className={s.dialogs + ' ' + s.active}>
         <NavLink to={path}>{props.name}</NavLink>
     </div>)
 }
@@ -23,15 +24,24 @@ const Dialogs = (props) => {
         <DialogItem name={d.name} id={d.id}/>
     );
 
-    let messageElements = props.atate.messageData.map( m =>
+    let messageElements = props.state.messageData.map( m =>
         <Message message={m.message}/>
     )
+    let newMessageElement = React.createRef();
+    console.log(newMessageElement);
+    let addMessage =  () => {
+        let texts =newMessageElement.current.value;
+        alert(texts);
+    }
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
 
-
+                <textarea ref={newMessageElement}></textarea>
+<button onClick ={
+                    addMessage
+                }>Add</button>
 
                 {   dialogsElements}
             </div>

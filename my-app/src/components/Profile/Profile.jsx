@@ -4,15 +4,14 @@ import s from'./Profile.module.css';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import Post from "./MyPosts/Post/Post";
 
-const Profile = (props) => {let postsElements = props.posts.map(
+const Profile = (props) => {let postsElements = props.state.posts.map(
     p => <Post message={p.message} likesCount={p.likesCount}/>
 )
-    debugger;
 
   return (
     <div>
       <ProfileInfo />
-    <MyPosts posts={props.state.posts}/> state.
+    <MyPosts posts={props.state.posts} addPost={props.addPost}/>
     </div>)
 }
 
