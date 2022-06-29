@@ -11,6 +11,7 @@ export let rerenderEntireTree = (state) => {
             <App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
         </React.StrictMode>
     );
+
     
 }
 
